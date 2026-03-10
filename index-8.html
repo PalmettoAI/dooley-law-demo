@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Dooley Law Firm | Lexington, SC</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--slate:#1B2B4B;--slate-mid:#243558;--slate-lt:#2E4068;--sky:#4A7FA5;--sky-lt:#6FA3C4;--sky-dim:rgba(74,127,165,0.1);--gold:#C8A85A;--cream:#FAF8F3;--warm:#F3EFE5;--charcoal:#1E1E1E;--brown:#4A3E30;--mid:#6E6860;--muted:#9A9288;--border:rgba(27,43,75,0.12);--line:rgba(27,43,75,0.08);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+.demo-banner{background:var(--slate);padding:.55rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;position:sticky;top:0;z-index:9999;}
+.demo-banner p{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.demo-banner a{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-lt);text-decoration:none;border-bottom:1px solid rgba(111,163,196,.4);white-space:nowrap;}
+.demo-div{width:1px;height:.9rem;background:rgba(255,255,255,.15);}
+nav{position:sticky;top:32px;z-index:100;background:rgba(250,248,243,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:1.3rem 5rem;display:flex;align-items:center;justify-content:space-between;}
+.brand-name{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:700;color:var(--slate);}
+.brand-name em{font-style:italic;font-weight:300;color:var(--sky);}
+.brand-sub{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:.1rem;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{font-size:.76rem;font-weight:500;letter-spacing:.06em;color:var(--mid);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--slate);}
+.nav-actions{display:flex;gap:.8rem;align-items:center;}
+.nav-phone{font-size:.85rem;font-weight:500;color:var(--slate);text-decoration:none;}
+.nav-book{background:var(--slate);color:white;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.72rem 1.6rem;text-decoration:none;border-radius:.25rem;transition:all .3s;}
+.nav-book:hover{background:var(--slate-lt);}
+.hero{background:var(--cream);overflow:hidden;}
+.hero-top-bar{background:var(--slate);padding:5rem 5rem 0;display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:end;max-width:100%;}
+.htb-left{padding-bottom:5rem;}
+.htb-eyebrow{display:inline-flex;align-items:center;gap:.7rem;margin-bottom:2rem;opacity:0;animation:fadeUp .6s .1s forwards;}
+.eye-rule{width:2.5rem;height:1.5px;background:var(--sky-lt);}
+.eye-text{font-size:.65rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+.hero-title{font-family:'Fraunces',serif;font-size:clamp(3rem,5.5vw,6.5rem);font-weight:900;line-height:.96;color:white;margin-bottom:2.5rem;opacity:0;animation:fadeUp .6s .25s forwards;}
+.hero-title em{font-style:italic;font-weight:300;color:var(--sky-lt);display:block;}
+.hero-body{font-size:1rem;line-height:1.85;color:rgba(255,255,255,.55);max-width:46ch;margin-bottom:3rem;opacity:0;animation:fadeUp .6s .4s forwards;}
+.hero-body strong{color:rgba(255,255,255,.9);font-weight:400;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .55s forwards;}
+.btn-white{background:white;color:var(--slate);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 2.5rem;text-decoration:none;border-radius:.25rem;transition:all .3s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2);}
+.btn-outline-wh{border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:1.1rem 2rem;text-decoration:none;border-radius:.25rem;transition:all .3s;}
+.btn-outline-wh:hover{border-color:white;color:white;}
+.htb-right{opacity:0;animation:fadeIn .8s .7s forwards;align-self:stretch;display:flex;align-items:flex-end;}
+.practice-list{border-left:2px solid rgba(255,255,255,.08);padding:3rem 0 0 3rem;width:100%;display:flex;flex-direction:column;}
+.pl-item{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.pl-item:first-child{border-top:1px solid rgba(255,255,255,.06);}
+.pl-item:hover .pl-name{color:white;}
+.pl-num{font-family:'Fraunces',serif;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.2);margin-right:1rem;flex-shrink:0;}
+.pl-name{font-size:.9rem;font-weight:500;color:rgba(255,255,255,.55);transition:color .2s;flex:1;}
+.pl-arrow{color:var(--sky-lt);opacity:0;transition:opacity .2s;}
+.pl-item:hover .pl-arrow{opacity:1;}
+.hero-strip{background:var(--warm);border-top:1px solid var(--border);padding:2rem 5rem;display:flex;align-items:center;gap:4rem;flex-wrap:wrap;}
+.hs-item{display:flex;align-items:center;gap:.8rem;}
+.hs-icon{font-size:1.2rem;}
+.hs-text{font-size:.78rem;font-weight:500;color:var(--mid);}
+.hs-divider{width:1px;height:1.5rem;background:var(--border);}
+.practice-section{padding:8rem 5rem;background:var(--cream);}
+.practice-inner{max-width:1400px;margin:0 auto;}
+.section-eyebrow{font-size:.65rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--sky);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
+.section-eyebrow::before{content:'';display:block;width:2rem;height:1.5px;background:var(--sky);}
+.section-title{font-family:'Fraunces',serif;font-size:clamp(2.5rem,4.5vw,5rem);font-weight:900;line-height:1.0;color:var(--slate);margin-bottom:1rem;}
+.section-title em{font-style:italic;font-weight:300;color:var(--sky);}
+.section-sub{font-size:1rem;line-height:1.8;color:var(--mid);max-width:52ch;margin-bottom:4rem;}
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.pa-card{background:white;border:1px solid var(--border);padding:3rem 2.5rem;transition:all .3s;position:relative;overflow:hidden;border-radius:.5rem;}
+.pa-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sky);transform:scaleY(0);transform-origin:bottom;transition:transform .4s;border-radius:0;}
+.pa-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(27,43,75,.08);}
+.pa-card:hover::after{transform:scaleY(1);}
+.pa-num{font-family:'Fraunces',serif;font-size:4rem;font-weight:900;color:rgba(27,43,75,.05);line-height:1;margin-bottom:1.2rem;display:block;}
+.pa-title{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--slate);margin-bottom:.7rem;}
+.pa-desc{font-size:.88rem;line-height:1.8;color:var(--mid);}
+.pa-link{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);text-decoration:none;transition:gap .3s;}
+.pa-link:hover{gap:.9rem;}
+.about-section{padding:8rem 5rem;background:var(--warm);}
+.about-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center;}
+.about-visual{position:relative;}
+.av-frame{background:var(--slate);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.av-bg{font-family:'Fraunces',serif;font-size:14rem;font-weight:900;font-style:italic;color:rgba(255,255,255,.04);position:absolute;line-height:1;user-select:none;}
+.av-border{position:absolute;top:1.5rem;right:-1.5rem;bottom:-1.5rem;left:1.5rem;border:1px solid var(--border);pointer-events:none;}
+.av-badge{position:absolute;bottom:-2rem;left:2.5rem;background:var(--sky);padding:1.2rem 2rem;}
+.av-badge-num{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;color:white;display:block;line-height:1;}
+.av-badge-label{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.8);}
+.about-content .section-title{margin-bottom:1.5rem;}
+.about-body{font-size:1rem;line-height:1.85;color:var(--mid);margin-bottom:1.5rem;}
+.about-quote{border-left:3px solid var(--sky);padding-left:1.5rem;font-family:'Fraunces',serif;font-size:1.25rem;font-style:italic;font-weight:300;color:var(--slate);line-height:1.65;margin:2rem 0;}
+.creds{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem;}
+.cred{display:flex;align-items:center;gap:1rem;font-size:.88rem;color:var(--mid);}
+.cred-dot{width:5px;height:5px;background:var(--sky);border-radius:50%;flex-shrink:0;}
+.process-section{padding:8rem 5rem;background:var(--slate);position:relative;overflow:hidden;}
+.process-section::after{content:'LAW';font-family:'Fraunces',serif;font-size:35vw;font-weight:900;font-style:italic;color:rgba(255,255,255,.02);position:absolute;right:-3vw;bottom:-8vw;line-height:1;pointer-events:none;}
+.process-inner{max-width:1400px;margin:0 auto;position:relative;z-index:1;}
+.proc-eyebrow{font-size:.65rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--sky-lt);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;}
+.proc-eyebrow::before{content:'';display:block;width:2rem;height:1.5px;background:var(--sky-lt);}
+.proc-title{font-family:'Fraunces',serif;font-size:clamp(2.5rem,4.5vw,5rem);font-weight:900;line-height:1.0;color:white;margin-bottom:0;}
+.proc-title em{font-style:italic;font-weight:300;color:var(--sky-lt);}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:5rem;position:relative;}
+.process-steps::before{content:'';position:absolute;top:2.5rem;left:12.5%;right:12.5%;height:1px;background:rgba(255,255,255,.08);}
+.pstep{padding:0 2rem;text-align:center;}
+.pstep-circle{width:5rem;height:5rem;border:1px solid rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;background:var(--slate);position:relative;z-index:1;transition:border-color .3s;}
+.pstep:hover .pstep-circle{border-color:var(--sky-lt);}
+.pstep-num{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:var(--sky-lt);}
+.pstep-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:white;margin-bottom:.7rem;}
+.pstep-desc{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.45);}
+.reviews-section{padding:8rem 5rem;background:var(--warm);border-top:1px solid var(--border);}
+.reviews-inner{max-width:1400px;margin:0 auto;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;}
+.rv-card{background:white;border:1px solid var(--border);padding:2.5rem;border-radius:.5rem;transition:all .3s;}
+.rv-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(27,43,75,.07);}
+.rv-stars{color:var(--gold);font-size:.95rem;letter-spacing:.1em;margin-bottom:1.2rem;}
+.rv-text{font-family:'Fraunces',serif;font-size:.98rem;font-style:italic;line-height:1.75;color:var(--brown);margin-bottom:1.5rem;}
+.rv-div{height:1px;background:var(--line);margin-bottom:1rem;}
+.rv-author{font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.contact-section{padding:8rem 5rem;background:var(--cream);}
+.contact-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:7rem;}
+.contact-info .section-title{margin-bottom:2rem;}
+.cd-list{display:flex;flex-direction:column;gap:0;margin-bottom:2rem;}
+.cd-item{display:flex;align-items:center;gap:1.2rem;padding:1.5rem;background:var(--cream);border-bottom:1px solid var(--line);transition:background .2s;}
+.cd-item:last-child{border-bottom:none;}
+.cd-item:hover{background:var(--warm);}
+.cd-icon{width:2.6rem;height:2.6rem;background:var(--sky-dim);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;border-radius:.25rem;}
+.cd-label{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem;}
+.cd-val{font-size:.92rem;color:var(--charcoal);line-height:1.4;}
+.contact-form{display:flex;flex-direction:column;gap:1.1rem;background:white;border:1px solid var(--border);padding:3rem;border-radius:.5rem;}
+.cf-title{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;color:var(--slate);margin-bottom:.3rem;}
+.cf-sub{font-size:.85rem;color:var(--muted);margin-bottom:.5rem;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
+.cf-group{display:flex;flex-direction:column;gap:.35rem;}
+.cf-label{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+.cf-input,.cf-select,.cf-textarea{background:var(--cream);border:1px solid var(--border);color:var(--charcoal);padding:.85rem 1rem;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:300;outline:none;width:100%;border-radius:.25rem;transition:border-color .3s;}
+.cf-input:focus,.cf-select:focus,.cf-textarea:focus{border-color:var(--sky);background:white;}
+.cf-select option{background:white;}
+.cf-textarea{min-height:100px;resize:vertical;}
+.cf-submit{background:var(--slate);color:white;font-size:.76rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:1.1rem;border:none;font-family:'DM Sans',sans-serif;cursor:pointer;border-radius:.25rem;transition:all .3s;}
+.cf-submit:hover{background:var(--slate-lt);transform:translateY(-1px);}
+.cf-disc{font-size:.7rem;line-height:1.6;color:var(--muted);}
+footer{background:var(--slate);padding:2.5rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:white;}
+.footer-brand em{font-style:italic;font-weight:300;color:var(--sky-lt);}
+.footer-copy{font-size:.68rem;color:rgba(255,255,255,.25);}
+.footer-cred{font-size:.62rem;color:rgba(74,127,165,.4);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hero-top-bar{grid-template-columns:1fr;padding:4rem 1.5rem 0;}
+  .htb-right{display:none;}
+  .hero-strip{padding:1.5rem;gap:1.5rem;flex-direction:column;align-items:flex-start;}
+  .hs-divider{display:none;}
+  .practice-grid,.reviews-grid{grid-template-columns:1fr;}
+  .about-inner,.contact-inner{grid-template-columns:1fr;gap:3rem;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:3rem;}
+  .process-steps::before{display:none;}
+  .practice-section,.about-section,.process-section,.contact-section,.reviews-section{padding:5rem 1.5rem;}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.5rem;}
+  .cf-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="demo-banner">
+  <p>⚠ Demo — Built by PalmettoAI</p>
+  <div class="demo-div"></div>
+  <p>Not the live Dooley Law Firm website</p>
+  <div class="demo-div"></div>
+  <a href="mailto:tony@palmettoai.com">Get yours → PalmettoAI</a>
+</div>
+<nav>
+  <div>
+    <div class="brand-name"><em>The</em> Dooley Law Firm</div>
+    <div class="brand-sub">Lexington, SC · General Practice</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#practice">Practice Areas</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Our Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="tel:8033592547" class="nav-phone">(803) 359-2547</a>
+    <a href="#contact" class="nav-book">Free Consultation</a>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-top-bar">
+    <div class="htb-left">
+      <div class="htb-eyebrow"><span class="eye-rule"></span><span class="eye-text">Lexington, SC · Since 1998</span></div>
+      <h1 class="hero-title">Your Legal<br/>Advocate<br/><em>In Lexington.</em></h1>
+      <p class="hero-body"><strong>Dedicated. Experienced. Local.</strong> The Dooley Law Firm has served Lexington for over 25 years, providing trusted legal counsel across family law, real estate, estate planning, and civil matters.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-white">Schedule a Free Consult</a>
+        <a href="#practice" class="btn-outline-wh">Practice Areas →</a>
+      </div>
+    </div>
+    <div class="htb-right">
+      <div class="practice-list">
+        <div class="pl-item"><span class="pl-num">01</span><span class="pl-name">Family Law &amp; Divorce</span><span class="pl-arrow">→</span></div>
+        <div class="pl-item"><span class="pl-num">02</span><span class="pl-name">Real Estate Transactions</span><span class="pl-arrow">→</span></div>
+        <div class="pl-item"><span class="pl-num">03</span><span class="pl-name">Estate Planning &amp; Wills</span><span class="pl-arrow">→</span></div>
+        <div class="pl-item"><span class="pl-num">04</span><span class="pl-name">Civil Litigation</span><span class="pl-arrow">→</span></div>
+        <div class="pl-item"><span class="pl-num">05</span><span class="pl-name">Business Law</span><span class="pl-arrow">→</span></div>
+        <div class="pl-item"><span class="pl-num">06</span><span class="pl-name">Personal Injury</span><span class="pl-arrow">→</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <div class="hs-item"><span class="hs-icon">⚖️</span><span class="hs-text">25+ Years Serving Lexington</span></div>
+    <div class="hs-divider"></div>
+    <div class="hs-item"><span class="hs-icon">📋</span><span class="hs-text">Free Initial Consultations</span></div>
+    <div class="hs-divider"></div>
+    <div class="hs-item"><span class="hs-icon">🤝</span><span class="hs-text">Personalized Attention</span></div>
+    <div class="hs-divider"></div>
+    <div class="hs-item"><span class="hs-icon">📍</span><span class="hs-text">Locally Rooted — Not a Chain</span></div>
+  </div>
+</section>
+<section id="practice" class="practice-section">
+  <div class="practice-inner">
+    <p class="section-eyebrow reveal">Practice Areas</p>
+    <h2 class="section-title reveal">Trusted Counsel<br/><em>Across the Law.</em></h2>
+    <p class="section-sub reveal">From family matters to business disputes — 25+ years of Lexington legal experience working for you.</p>
+    <div class="practice-grid reveal">
+      <div class="pa-card"><span class="pa-num">01</span><h3 class="pa-title">Family Law &amp; Divorce</h3><p class="pa-desc">Divorce, custody, child support, and adoption. We guide families through difficult transitions with compassion and clarity — always protecting the people who matter most.</p><a href="#contact" class="pa-link">Free Consult →</a></div>
+      <div class="pa-card"><span class="pa-num">02</span><h3 class="pa-title">Real Estate Law</h3><p class="pa-desc">Closings, title disputes, contract review, and real estate litigation. Whether buying, selling, or facing a property dispute — experienced counsel protects your investment.</p><a href="#contact" class="pa-link">Get Help →</a></div>
+      <div class="pa-card"><span class="pa-num">03</span><h3 class="pa-title">Estate Planning</h3><p class="pa-desc">Wills, trusts, powers of attorney, and healthcare directives. Plan for the future so your wishes are honored and your loved ones are protected.</p><a href="#contact" class="pa-link">Start Planning →</a></div>
+      <div class="pa-card"><span class="pa-num">04</span><h3 class="pa-title">Civil Litigation</h3><p class="pa-desc">Contract disputes, business conflicts, and civil claims. Strong advocates in the courtroom and skilled negotiators outside it.</p><a href="#contact" class="pa-link">Discuss Case →</a></div>
+      <div class="pa-card"><span class="pa-num">05</span><h3 class="pa-title">Business Law</h3><p class="pa-desc">Entity formation, contracts, partnership agreements, and business disputes. Legal foundation for businesses to grow with confidence.</p><a href="#contact" class="pa-link">Get Started →</a></div>
+      <div class="pa-card"><span class="pa-num">06</span><h3 class="pa-title">Personal Injury</h3><p class="pa-desc">Car accidents, slip and falls, and negligence claims. You focus on recovery — we fight to make sure you're fairly compensated.</p><a href="#contact" class="pa-link">Free Review →</a></div>
+    </div>
+  </div>
+</section>
+<section id="about" class="about-section">
+  <div class="about-inner">
+    <div class="about-visual reveal">
+      <div class="av-frame"><span class="av-bg">D</span></div>
+      <div class="av-border"></div>
+      <div class="av-badge"><span class="av-badge-num">25+</span><span class="av-badge-label">Years in Lexington</span></div>
+    </div>
+    <div class="about-content">
+      <p class="section-eyebrow reveal">About the Firm</p>
+      <h2 class="section-title reveal">Rooted Here.<br/><em>Fighting for You.</em></h2>
+      <p class="about-body reveal">The Dooley Law Firm has been a fixture in the Lexington legal community since 1998. We're not a chain — we're your neighbors, and we take that responsibility seriously.</p>
+      <blockquote class="about-quote reveal">"Every client deserves to understand their situation, know their options, and feel confident in their representation."</blockquote>
+      <p class="about-body reveal">We represent individuals, families, and small businesses throughout Lexington County and the Midlands. Built on trust earned over decades — and the belief that responsive, honest legal counsel makes a real difference.</p>
+      <div class="creds reveal">
+        <div class="cred"><span class="cred-dot"></span>Licensed to practice throughout South Carolina</div>
+        <div class="cred"><span class="cred-dot"></span>Free initial consultations — all practice areas</div>
+        <div class="cred"><span class="cred-dot"></span>Serving Lexington families and businesses since 1998</div>
+        <div class="cred"><span class="cred-dot"></span>You work directly with the attorney — not a paralegal</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="process" class="process-section">
+  <div class="process-inner">
+    <p class="proc-eyebrow reveal" style="justify-content:center">How We Work</p>
+    <h2 class="proc-title reveal" style="text-align:center">Clear Process.<br/><em>No Surprises.</em></h2>
+    <div class="process-steps">
+      <div class="pstep reveal"><div class="pstep-circle"><span class="pstep-num">I</span></div><h3 class="pstep-title">Free Consult</h3><p class="pstep-desc">Call or submit your info. We respond the same business day — no voicemail black hole.</p></div>
+      <div class="pstep reveal"><div class="pstep-circle"><span class="pstep-num">II</span></div><h3 class="pstep-title">Case Review</h3><p class="pstep-desc">We listen, review the facts, and give you an honest assessment of your legal options.</p></div>
+      <div class="pstep reveal"><div class="pstep-circle"><span class="pstep-num">III</span></div><h3 class="pstep-title">Clear Strategy</h3><p class="pstep-desc">You'll know the plan, timeline, and costs before we begin. No confusion, no surprises.</p></div>
+      <div class="pstep reveal"><div class="pstep-circle"><span class="pstep-num">IV</span></div><h3 class="pstep-title">Representation</h3><p class="pstep-desc">From document prep to courtroom advocacy — always keeping you informed every step.</p></div>
+    </div>
+  </div>
+</section>
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <p class="section-eyebrow reveal">Client Testimonials</p>
+    <h2 class="section-title reveal">What Lexington<br/><em>Clients Are Saying.</em></h2>
+    <div class="reviews-grid reveal">
+      <div class="rv-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"The Dooley Law Firm handled my divorce with care I didn't know I needed. They kept me informed, answered every question, and fought hard for what mattered most."</p><div class="rv-div"></div><p class="rv-author">— Lexington Client, Family Law</p></div>
+      <div class="rv-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"We've used the Dooley firm for our business contracts for seven years. Responsive, smart, and they explain things in plain English. Wouldn't use anyone else in Lexington."</p><div class="rv-div"></div><p class="rv-author">— Local Business Owner</p></div>
+      <div class="rv-card"><div class="rv-stars">★★★★★</div><p class="rv-text">"From the first call I felt like I mattered. They called back the same day and had a clear plan within 48 hours. That's how a law firm should operate."</p><div class="rv-div"></div><p class="rv-author">— Real Estate Client</p></div>
+    </div>
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <p class="section-eyebrow reveal">Contact the Firm</p>
+      <h2 class="section-title reveal">Let's Talk<br/><em>About Your Case.</em></h2>
+      <div class="cd-list reveal">
+        <div class="cd-item"><div class="cd-icon">📞</div><div><p class="cd-label">Phone</p><p class="cd-val">(803) 359-2547</p></div></div>
+        <div class="cd-item"><div class="cd-icon">📍</div><div><p class="cd-label">Office</p><p class="cd-val">Lexington, SC 29072</p></div></div>
+        <div class="cd-item"><div class="cd-icon">◷</div><div><p class="cd-label">Hours</p><p class="cd-val">Monday – Friday: 9AM – 5PM</p></div></div>
+        <div class="cd-item"><div class="cd-icon">💬</div><div><p class="cd-label">Consultation</p><p class="cd-val">Free initial consultation — all practice areas</p></div></div>
+      </div>
+    </div>
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <h3 class="cf-title">Request a Consultation</h3>
+      <p class="cf-sub">We respond the same business day. All information is strictly confidential.</p>
+      <div class="cf-row">
+        <div class="cf-group"><label class="cf-label">First Name</label><input class="cf-input" type="text" placeholder="Jane" required/></div>
+        <div class="cf-group"><label class="cf-label">Last Name</label><input class="cf-input" type="text" placeholder="Smith" required/></div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-group"><label class="cf-label">Phone</label><input class="cf-input" type="tel" placeholder="(803) 555-0100" required/></div>
+        <div class="cf-group"><label class="cf-label">Email</label><input class="cf-input" type="email" placeholder="jane@email.com"/></div>
+      </div>
+      <div class="cf-group"><label class="cf-label">Legal Matter</label>
+        <select class="cf-select cf-input">
+          <option>Family Law / Divorce</option>
+          <option>Real Estate</option>
+          <option>Estate Planning / Wills</option>
+          <option>Civil Litigation</option>
+          <option>Business Law</option>
+          <option>Personal Injury</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="cf-group"><label class="cf-label">Brief Description</label><textarea class="cf-textarea cf-input" placeholder="Briefly describe your situation..."></textarea></div>
+      <button type="submit" class="cf-submit">Request Free Consultation →</button>
+      <p class="cf-disc">Submitting this form does not create an attorney-client relationship. All communications are confidential.</p>
+    </form>
+  </div>
+</section>
+<footer>
+  <div class="footer-brand"><em>The</em> Dooley Law Firm</div>
+  <p class="footer-copy">© 2026 The Dooley Law Firm · Lexington, SC 29072 · (803) 359-2547</p>
+  <p class="footer-cred">Demo built by PalmettoAI · palmettoai.github.io</p>
+</footer>
+<script>
+  const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:.07});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('.cf-submit');b.textContent='✓ Received — We\'ll be in touch today.';b.style.background='var(--sky)';b.disabled=true;}
+</script>
+</body>
+</html>
