@@ -146,9 +146,13 @@ footer{background:var(--slate);padding:2.5rem 5rem;display:flex;align-items:cent
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s;}
 .reveal.visible{opacity:1;transform:translateY(0);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--slate);transition:all .3s;}
 @media(max-width:960px){
   nav{padding:1rem 1.5rem;}
+  .nav-hamburger{display:flex;}.nav-actions{display:none;}
   .nav-links{display:none;}
+  .nav-links.nav-open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(250,248,243,.97);padding:1.5rem 2rem;border-top:1px solid var(--border);gap:1.2rem;z-index:99;}
   .hero-top-bar{grid-template-columns:1fr;padding:4rem 1.5rem 0;}
   .htb-right{display:none;}
   .hero-strip{padding:1.5rem;gap:1.5rem;flex-direction:column;align-items:flex-start;}
@@ -182,6 +186,7 @@ footer{background:var(--slate);padding:2.5rem 5rem;display:flex;align-items:cent
     <li><a href="#process">Our Process</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-actions">
     <a href="tel:8033592547" class="nav-phone">(803) 359-2547</a>
     <a href="#contact" class="nav-book">Free Consultation</a>
@@ -328,6 +333,7 @@ footer{background:var(--slate);padding:2.5rem 5rem;display:flex;align-items:cent
   const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:.07});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   function handleSubmit(e){e.preventDefault();const b=e.target.querySelector('.cf-submit');b.textContent='✓ Received — We\'ll be in touch today.';b.style.background='var(--sky)';b.disabled=true;}
+  document.querySelector('.nav-hamburger').addEventListener('click',function(){document.querySelector('.nav-links').classList.toggle('nav-open');});
 </script>
 </body>
 </html>
